@@ -1,0 +1,6 @@
+name: PlayerStatistics
+version: 0.1
+main: me.lucashagen.Main
+api-version: 1.15
+author: "Lucas Hagen"
+descirption: Plugin that creates statistics for players
