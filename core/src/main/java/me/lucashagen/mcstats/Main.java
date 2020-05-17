@@ -6,34 +6,28 @@ import java.util.logging.Level;
 
 public class Main {
 
-    private ServerAPI api;
+    private static ServerAPI api;
 
-    public Main(ServerAPI api)
-    {
-        this.api = api;
+    public Main(ServerAPI serverAPI) {
+        api = serverAPI;
     }
 
-    public void onLoad()
-    {
-        api.getLogger().log(Level.INFO, String.format("Plugin LOADED!!!! (%s version)",
+    public void onLoad() {
+        api.getLogger().log(Level.INFO, String.format("Plugin Loaded (%s version)",
                 api.getType().toString()));
     }
 
-    public void onEnable()
-    {
-        api.getLogger().log(Level.INFO, String.format("Plugin ENABLED!!!! (%s version)",
+    public void onEnable() {
+        api.getLogger().log(Level.INFO, String.format("Plugin Enabled (%s version)",
                 api.getType().toString()));
     }
 
-    public void onDisable()
-    {
-        api.getLogger().log(Level.INFO, String.format("Plugin DISABLED!!!! (%s version)",
+    public void onDisable() {
+        api.getLogger().log(Level.INFO, String.format("Plugin Disabled (%s version)",
                 api.getType().toString()));
     }
 
-    public ServerAPI getAPI()
-    {
-        return this.api;
+    public static ServerAPI getAPI() {
+        return api;
     }
-
 }

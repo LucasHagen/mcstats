@@ -1,0 +1,25 @@
+# Config file for the mcstats plugin
+
+# Database Settings:
+#
+#   database.use: <mysql|sqlite>
+database:
+  use: mysql
+  mysql:
+    host: 'localhost:3306'
+    database: 'mcstats'
+    username: 'user'
+    password: 'password'
+
+# Statistics Settings
+#
+# use 'true' to enable the statistic, and 'false' to disable
+statistics:
+  player:
+    enable_online_time: true
+    enable_first_login: true
+    enable_last_login: true
+  player_count:
+    interval_sec: 600
+    enabled: true
+

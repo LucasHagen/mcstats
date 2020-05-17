@@ -5,7 +5,7 @@ import me.lucashagen.mcstats.api.ServerAPI;
 
 import java.util.logging.Logger;
 
-public class BungeeAPI implements ServerAPI {
+public class BungeeAPI extends ServerAPI {
 
     private BungeeMain plugin;
 

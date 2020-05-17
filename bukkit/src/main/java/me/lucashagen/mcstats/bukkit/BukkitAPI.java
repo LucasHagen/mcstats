@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 
 import java.util.logging.Logger;
 
-public class BukkitAPI implements ServerAPI {
+public class BukkitAPI extends ServerAPI {
 
     private BukkitMain plugin;
 

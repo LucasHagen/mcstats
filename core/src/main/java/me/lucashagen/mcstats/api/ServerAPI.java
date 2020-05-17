@@ -1,11 +1,16 @@
 package me.lucashagen.mcstats.api;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public interface ServerAPI {
+public abstract class ServerAPI {
 
-    public Logger getLogger();
+    public abstract Logger getLogger();
 
-    public APIType getType();
+    public abstract APIType getType();
 
+    public void log(Level severe, String message)
+    {
+        getLogger().log(severe, message);
+    }
 }
