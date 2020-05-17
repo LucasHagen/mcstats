@@ -1,4 +1,4 @@
-package me.lucashagen.player;
+package me.lucashagen.mcstats.player;
 
 import java.util.concurrent.TimeUnit;
 

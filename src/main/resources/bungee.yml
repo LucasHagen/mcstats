@@ -1,6 +1,5 @@
 name: mcstats
 version: 0.1
-main: me.lucashagen.mcstats.bukkit.BukkitMain
-api-version: 1.15
+main: me.lucashagen.mcstats.bungee.BungeeMain
 author: "Lucas Hagen"
 descirption: Plugin that creates statistics for players

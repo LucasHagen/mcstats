@@ -1,11 +1,12 @@
-package me.lucashagen;
+package me.lucashagen.mcstats.bukkit;
 
-import me.lucashagen.player.SessionManager;
+import me.lucashagen.mcstats.MainListener;
+import me.lucashagen.mcstats.player.SessionManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin {
+public class BukkitMain extends JavaPlugin {
 
-    SessionManager sessionManager;
+    public SessionManager sessionManager;
 
     MainListener listener = null;
 

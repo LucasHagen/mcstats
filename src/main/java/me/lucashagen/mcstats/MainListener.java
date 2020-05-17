@@ -1,5 +1,6 @@
-package me.lucashagen;
+package me.lucashagen.mcstats;
 
+import me.lucashagen.mcstats.bukkit.BukkitMain;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -10,9 +11,9 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 public class MainListener implements Listener {
 
-    final Main plugin;
+    final BukkitMain plugin;
 
-    public MainListener(Main plugin) {
+    public MainListener(BukkitMain plugin) {
         this.plugin = plugin;
     }
 
