@@ -1,6 +1,6 @@
 name: mcstats
-version: 0.1
+version: ${project.version}
 main: me.lucashagen.mcstats.bukkit.BukkitMain
 api-version: 1.15
 author: "Lucas Hagen"
-descirption: Plugin that creates statistics for players
+descirption: ${project.description}

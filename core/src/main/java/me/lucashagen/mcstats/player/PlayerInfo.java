@@ -1,7 +1,5 @@
 package me.lucashagen.mcstats.player;
 
-import org.bukkit.entity.Player;
-
 import java.util.UUID;
 
 public class PlayerInfo {
@@ -10,10 +8,10 @@ public class PlayerInfo {
     private String username;
     private Session session;
 
-    public PlayerInfo(Player player)
+    public PlayerInfo(UUID uuid, String username)
     {
-        this.uuid = player.getUniqueId();
-        this.username = player.getName();
+        this.uuid = uuid;
+        this.username = username;
         this.session = new Session();
     }
 

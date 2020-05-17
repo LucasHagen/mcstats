@@ -1,5 +1,5 @@
 name: mcstats
-version: 0.1
+version: ${project.version}
 main: me.lucashagen.mcstats.bungee.BungeeMain
 author: "Lucas Hagen"
-descirption: Plugin that creates statistics for players
+descirption: ${project.description}

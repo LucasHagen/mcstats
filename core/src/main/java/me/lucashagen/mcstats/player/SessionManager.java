@@ -1,7 +1,5 @@
 package me.lucashagen.mcstats.player;
 
-import org.bukkit.entity.Player;
-
 import java.util.HashMap;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -14,16 +12,16 @@ public class SessionManager {
         playerInfos = new HashMap<UUID, PlayerInfo>();
     }
 
-    public void createSession(Player player) {
-        playerInfos.put(player.getUniqueId(), new PlayerInfo(player));
+    public void createSession(UUID uuid, String username) {
+        playerInfos.put(uuid, new PlayerInfo(uuid, username));
     }
 
-    public PlayerInfo getInfo(Player player) {
-        return playerInfos.getOrDefault(player.getUniqueId(), null);
+    public PlayerInfo getInfo(UUID uuid) {
+        return playerInfos.getOrDefault(uuid, null);
     }
 
-    public void endSession(Player player) {
-        PlayerInfo info = getInfo(player);
+    public void endSession(UUID uuid) {
+        PlayerInfo info = getInfo(uuid);
 
         if (info != null) {
             info.endSession();
