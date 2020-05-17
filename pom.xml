@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <version>0.0.1</version>
 
-    <description>Plugin that creates statistics bukkit and bungeecord servers</description>
+    <description>Plugin that creates statistics for bukkit and bungeecord servers</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
