@@ -22,7 +22,6 @@ public class BungeeMain extends Plugin {
         this.api = new BungeeAPI(this);
         this.main = new Main(api);
 
-
         this.main.onLoad();
     }
 
@@ -41,6 +40,12 @@ public class BungeeMain extends Plugin {
         File configFile = new File(getDataFolder(), "config.yml");
 
         if (!configFile.exists()) {
+            if (!getDataFolder().exists()) {
+                if (!getDataFolder().mkdir()) {
+                    throw new IOException("Unable to create plugin folder!");
+                }
+            }
+
             api.log(Level.INFO, Lang.CREATING_CONFIG.getMessage());
             Files.copy(this.getResourceAsStream("config.yml"),
                     configFile.toPath());

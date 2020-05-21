@@ -6,6 +6,10 @@ public enum Lang {
     CREATING_CONFIG("Config file not found. " +
             "Creating default config file."),
     CONFIG_ERROR("FATAL ERROR! ERROR WHILE LOADING CONFIG FILE!"),
+    DB_FATAL_ERROR("FATAL ERROR! ERROR WHILE INITIALIZING DATABASE!"),
+    PLUGIN_FORCED_DISABLE("A FATAL ERROR HAS OCCURED, THE PLUGIN" +
+            " WILL BE DISABLED!"),
+    LOG_TAG("[MCSTATS]"),
     ;
 
     private final String message;
@@ -22,7 +26,8 @@ public enum Lang {
 
     public String getMessage(String... args)
     {
-        return String.format(this.message, args);
+
+        return String.format(this.message, (Object[]) args);
     }
 
     @Override

@@ -20,10 +20,12 @@ public class BungeeAPI extends ServerAPI {
         this.plugin = plugin;
     }
 
-    public Logger getLogger() {
+    @Override
+    protected Logger getLogger() {
         return plugin.getProxy().getLogger();
     }
 
+    @Override
     public APIType getType() {
         return APIType.BUNGEE;
     }

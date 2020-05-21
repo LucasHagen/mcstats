@@ -14,7 +14,7 @@ public abstract class ServerAPI {
      *
      * @return Console Logger
      */
-    public abstract Logger getLogger();
+    protected abstract Logger getLogger();
 
     /**
      * Gets the API Type (BUKKIT or BUNGEE)
@@ -30,7 +30,7 @@ public abstract class ServerAPI {
      * If the configuration file does not exist, this function will copy the
      * default configuration file.
      *
-     * @return
+     * @return PluginConfiguration
      */
     public abstract PluginConfiguration getConfig();
 
@@ -42,6 +42,6 @@ public abstract class ServerAPI {
      */
     public void log(Level severe, String message)
     {
-        getLogger().log(severe, message);
+        getLogger().log(severe, Lang.LOG_TAG.getMessage() + " " + message);
     }
 }

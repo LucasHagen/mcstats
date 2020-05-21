@@ -18,7 +18,7 @@ public class BukkitAPI extends ServerAPI {
     }
 
     @Override
-    public Logger getLogger() {
+    protected Logger getLogger() {
         return Bukkit.getLogger();
     }
 
