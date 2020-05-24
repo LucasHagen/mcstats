@@ -1,6 +1,7 @@
 package me.lucashagen.mcstats;
 
-import me.lucashagen.mcstats.api.Lang;
+import me.lucashagen.mcstats.player.SessionManager;
+import me.lucashagen.mcstats.utils.Lang;
 import me.lucashagen.mcstats.api.ServerAPI;
 import me.lucashagen.mcstats.database.MySQLDatabase;
 import me.lucashagen.mcstats.utils.FileUtils;
@@ -16,8 +17,15 @@ public class Main {
 
     private MySQLDatabase database;
 
+    private MSEventListener listener;
+
     private boolean isDisabled = false;
 
+    /**
+     * Constructor
+     *
+     * @param serverAPI Server API
+     */
     public Main(ServerAPI serverAPI) {
         api = serverAPI;
     }
@@ -37,10 +45,12 @@ public class Main {
             copyJarLibraries();
             initializeDatabase();
 
+            listener = new MSEventListener(new SessionManager());
+            api.registerEventListener(listener);
+
             api.log(Level.INFO, String.format("Plugin Enabled (%s version)",
                     api.getType().toString()));
-        } catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             disablePlugin();
         }
@@ -50,7 +60,7 @@ public class Main {
      * This method is called on the onEnable from Craftbukkit and Bungeecord
      */
     public void onDisable() {
-        if(isDisabled) {
+        if (isDisabled) {
             return;
         }
 
@@ -88,10 +98,12 @@ public class Main {
         }
     }
 
+    /**
+     * Copies the necessary libraries to the folder '/plugins/libs/'
+     */
     public void copyJarLibraries() throws IOException, URISyntaxException {
         File folder = new File("plugins/lib");
-        if(!folder.exists())
-        {
+        if (!folder.exists()) {
             folder.mkdir();
         }
 

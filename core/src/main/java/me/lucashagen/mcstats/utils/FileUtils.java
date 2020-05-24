@@ -11,10 +11,21 @@ import java.util.Collections;
 
 public class FileUtils {
 
+    /**
+     * Blocked constructor
+     */
     private FileUtils() {
 
     }
 
+    /**
+     * Copies a file or folder from the .jar, to the file system.
+     *
+     * @param source File to be copied (from the .jar)
+     * @param target Where to copy the file to
+     * @throws URISyntaxException URI syntax error
+     * @throws IOException IO Exception
+     */
     public static void copyFromJar(String source, final Path target)
             throws URISyntaxException, IOException {
         URI resource = Main.class.getResource("").toURI();

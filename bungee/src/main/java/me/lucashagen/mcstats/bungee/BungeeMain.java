@@ -1,7 +1,7 @@
 package me.lucashagen.mcstats.bungee;
 
 import me.lucashagen.mcstats.Main;
-import me.lucashagen.mcstats.api.Lang;
+import me.lucashagen.mcstats.utils.Lang;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
@@ -19,7 +19,7 @@ public class BungeeMain extends Plugin {
 
     @Override
     public void onLoad() {
-        this.api = new BungeeAPI(this);
+        this.api = BungeeAPI.createInstance(this);
         this.main = new Main(api);
 
         this.main.onLoad();

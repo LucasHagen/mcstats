@@ -1,5 +1,9 @@
 package me.lucashagen.mcstats.api;
 
+import me.lucashagen.mcstats.MSEventListener;
+import me.lucashagen.mcstats.utils.Lang;
+
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,4 +48,27 @@ public abstract class ServerAPI {
     {
         getLogger().log(severe, Lang.LOG_TAG.getMessage() + " " + message);
     }
+
+    /**
+     * Gets a online player.
+     * If the player is not online, null is returned.
+     *
+     * @param uuid Player's UUID, not null
+     * @return MSPlayer, or null if player is offline
+     */
+    public abstract MSPlayer getPlayer(UUID uuid);
+
+    /**
+     * Registers the event listener
+     *
+     * @param listener Event listener
+     */
+    public abstract void registerEventListener(MSEventListener listener);
+
+    /**
+     * Connected Player count
+     *
+     * @return Online player count
+     */
+    public abstract int getOnlinePlayerCount();
 }

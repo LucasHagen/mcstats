@@ -1,7 +1,7 @@
 package me.lucashagen.mcstats.bukkit;
 
 import me.lucashagen.mcstats.Main;
-import me.lucashagen.mcstats.api.Lang;
+import me.lucashagen.mcstats.utils.Lang;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

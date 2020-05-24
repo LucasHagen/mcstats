@@ -1,4 +1,4 @@
-package me.lucashagen.mcstats.api;
+package me.lucashagen.mcstats.utils;
 
 public enum Lang {
 

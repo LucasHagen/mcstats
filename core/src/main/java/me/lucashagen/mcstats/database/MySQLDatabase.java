@@ -113,7 +113,7 @@ public class MySQLDatabase implements AutoCloseable {
             success = false;
         }
 
-        return true;
+        return success;
     }
 
     /**
